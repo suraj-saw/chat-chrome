@@ -33,6 +33,17 @@ function buildBotReply(rawInput) {
     return 'I am **Local Chat**, a lightweight browser chatbot made with React.'
   }
 
+  if (/(productivity tips|help me focus|stay productive)/.test(input)) {
+    return [
+      'Here are some productivity tips:',
+      '',
+      '- Use the Pomodoro technique: work for 25 minutes, then take a 5-minute break.',
+      '- Prioritize tasks using the Eisenhower matrix: urgent vs. important.',
+      '- Minimize distractions by turning off non-essential notifications.',
+      '- Set specific goals for each work session.',
+    ].join('\n')
+  }
+
   if (/(help|what can you do|features)/.test(input)) {
     return [
       'Here are a few things I can do:',
@@ -52,6 +63,8 @@ function buildBotReply(rawInput) {
     return 'Why do frontend developers carry a map? Because they keep getting lost in routing.'
   }
 
+
+
   if (/(bye|goodbye|see you)/.test(input)) {
     return 'Catch you later. Refresh me anytime.'
   }
@@ -62,8 +75,6 @@ function buildBotReply(rawInput) {
     'I am a simple local chatbot, so I use rule-based replies. You can extend me with:',
     '',
     '- API integration',
-    // '- Streaming responses',
-    // '- Better intent handling',
   ].join('\n')
 }
 
